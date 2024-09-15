@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartment Listings</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+        <nav class="container mx-auto p-4 flex justify-between items-center">
+          <div class="text-lg font-semibold">Circle Pay</div>
+          <ul class="flex space-x-4">
+            <li><a href="index.html" class="text-gray-600 hover:text-blue-600">Home</a></li>
+            <li><a href="about.html" class="text-gray-600 hover:text-blue-600">About</a></li>
+            <li><a href="services.html" class="text-gray-600 hover:text-blue-600">Services</a></li>
+            <li><a href="contact.html" class="text-gray-600 hover:text-blue-600">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+    <!-- Apartment Listings -->
+    <section class="container mx-auto py-16">
+        <h1 class="text-3xl font-semibold text-center mb-12">Available Apartments for Rent</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Apartment 1 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img src="https://wallpapers.com/images/hd/modern-luxury-house-with-cozy-ambiance-cgrgt4xchi0zq7ki.jpg" alt="Apartment 1" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-xl font-bold">Sky Dandelions Apartment</h2>
+                    <p>Sector 28, Gurgaon</p>
+                    <p class="text-gray-600 mt-2">₹22,000/month</p>
+                    <button class="bg-blue-500 text-white py-2 px-4 mt-4 rounded hover:bg-blue-700" onclick="openModal()">Rent Now</button>
+                </div>
+            </div>
+
+            <!-- Apartment 2 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img src="https://images5.alphacoders.com/341/thumb-1920-341715.jpg" alt="Apartment 2" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-xl font-bold">Wings Tower</h2>
+                    <p>Sector 29, Gurgaon</p>
+                    <p class="text-gray-600 mt-2">₹17,000/month</p>
+                    <button class="bg-blue-500 text-white py-2 px-4 mt-4 rounded hover:bg-blue-700" onclick="openModal()">Rent Now</button>
+                </div>
+            </div>
+
+            <!-- Apartment 3 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img src="https://e0.pxfuel.com/wallpapers/973/473/desktop-wallpaper-inside-luxury-homes-luxury-house-interior-cool-house.jpg" alt="Apartment 3" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h2 class="text-xl font-bold">Wayside Modern House</h2>
+                    <p>MG Road, Gurgaon</p>
+                    <p class="text-gray-600 mt-2">₹18,000/month</p>
+                    <button class="bg-blue-500 text-white py-2 px-4 mt-4 rounded hover:bg-blue-700" onclick="openModal()">Rent Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KYC Modal -->
+    <div class="modal" id="kycModal">
+        <div class="bg-white p-8 rounded-lg max-w-lg w-full">
+            <h2 class="text-2xl font-semibold mb-4">KYC Form for Circle Pay</h2>
+            <p class="mb-4">Complete the KYC to rent this apartment using Circle Pay:</p>
+            
+            <!-- KYC Form -->
+            <form>
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700">Full Name</label>
+                    <input type="text" id="name" class="w-full p-2 border border-gray-300 rounded">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="pan" class="block text-gray-700">PAN Number</label>
+                    <input type="text" id="pan" class="w-full p-2 border border-gray-300 rounded">
+                </div>
+
+                <div class="mb-4">
+                    <label for="aadhaar" class="block text-gray-700">Aadhaar Number</label>
+                    <input type="text" id="aadhaar" class="w-full p-2 border border-gray-300 rounded">
+                </div>
+
+                <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">Submit KYC</button>
+                <button type="button" class="bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-700 ml-4" onclick="closeModal()">Cancel</button>
+            </form>
+        </div>
+    </div>
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto text-center">
+          <p>&copy; 2024 Your Brand. All Rights Reserved.</p>
+        </div>
+      </footer>
+
+    <script>
+        // Modal functions
+        function openModal() {
+            document.getElementById("kycModal").classList.add("active");
+        }
+
+        function closeModal() {
+            document.getElementById("kycModal").classList.remove("active");
+        }
+    </script>
+
+
+</body>
+</html>
